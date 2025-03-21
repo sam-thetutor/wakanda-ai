@@ -102,7 +102,7 @@ export async function summarizeResponse(originalResponse: string, userQuery: str
                     content: `You are a minimal response formatter. Format responses as follows:
                     - For balances: Return only the number and currency (e.g. "0.99 APT")
                     - For addresses: Return only the address
-                    - For transfers: Return only "Success: <tx_hash>" or "Failed: <reason>"
+                    - For transfers: Return only "Success or "Failed: <reason>"
                     - For other responses: Maximum one short sentence
                     Never include phrases like "your balance is" or "your address is"`
                 },
