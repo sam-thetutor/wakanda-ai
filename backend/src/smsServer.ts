@@ -26,9 +26,6 @@ export default async function smsServer(): Promise<void> {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
 
-//   app.get("/", (_req: Request, res: Response) => {
-//     res.send("SMS Server is running");
-//   });
 
   //ussd route
   app.post("/new-ussd", async (req: Request, res: Response) => {
@@ -159,19 +156,14 @@ export default async function smsServer(): Promise<void> {
 
   app.post("/notifications", async (req: Request, res: Response) => {
     console.log("notifications have come in", req.body);
-
-    
-    
   });
-
-
-
 
   //route to reset the database
   app.get("/reset-db", async (req: Request, res: Response) => {
     await User.deleteMany();
     res.send("Database reset");
   });
+
 
   app.post("/new-message", async (req: Request, res: Response) => {
     try {
@@ -180,35 +172,21 @@ export default async function smsServer(): Promise<void> {
 
       // Check if user exists
       let user = await User.findOne({ phoneNumber });
-      console.log("user", user);
 
       if (!user) {
-        const newAccount = Account.generate({
-          scheme: SigningSchemeInput.Ed25519,
-          legacy: false,
-        });
-        const privateKeyHex = newAccount.privateKey
-          ?.toString()
-          .replace("0x", ""); // Remove 0x prefix
-
-        console.log("new account", newAccount);
-        //foreach new account created, send some aptos to the address
-        await activateAccount(newAccount);
-        //save the new account to the user
-        user = new User({
-          phoneNumber,
-          privateKey: privateKeyHex,
-          publicKey: newAccount.publicKey?.toString(),
-        });
-        await user.save();
-
+        // Send setup instructions via SMS
         await africastalking.SMS.send({
           to: phoneNumber,
-          message:
-            "New account created. Your address is " +
-            newAccount.publicKey?.toString(),
-          from: process.env.AFRICASTALKING_SENDER_ID as string,
+          message: `Welcome to Wakanda AI! To get started:
+1. Dial *483*1# to access the USSD menu
+2. Select option 1 to create your account
+3. Set up your 4-digit PIN
+4. Once complete, you can start sending SMS queries
+
+Need help? Contact support@wakandaai.com`,
+          from: process.env.AFRICASTALKING_SENDER_ID as string
         });
+        return res.status(200).json({ message: "Setup instructions sent" });
       }
 
       // Initialize agent with user's private key
@@ -242,9 +220,16 @@ export default async function smsServer(): Promise<void> {
 
       // Send response back to user
       if (response) {
+
+        //summarize the response
+        const summarizedResponse = await summarizeResponse(response, req.body.text);
+
+
+
+
         await africastalking.SMS.send({
           to: phoneNumber,
-          message: response.trim(),
+          message: summarizedResponse,
           from: process.env.AFRICASTALKING_SENDER_ID as string,
         });
       }

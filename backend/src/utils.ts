@@ -111,7 +111,7 @@ export async function summarizeResponse(originalResponse: string, userQuery: str
                     content: `User Query: "${userQuery}"\nDetailed Response: "${originalResponse}"\nProvide minimal response:`
                 }
             ],
-            temperature: 0,
+            temperature: 0.6,
         });
 
         return response.choices[0].message.content?.trim() || originalResponse;
