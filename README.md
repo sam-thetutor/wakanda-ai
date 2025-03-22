@@ -1,6 +1,6 @@
-# Wakanda AI - Aptos Mobile Agent
+# Wakanda AI
 
-A USSD and SMS-based blockchain interface that enables anyone with a basic mobile phone to interact with the Aptos blockchain in their preferred language (English, French, or Kiswahili). Built for Africa, it provides PIN-protected wallet management through USSD menus and natural language blockchain interactions via SMS.
+This is an AI Agent that allows users to interact with the Aptos blockchain through SMS and USSD in their native languages. Built for Africa, it provides PIN-protected wallet management through USSD menus and natural language blockchain interactions via SMS.
 
 ## Key Features
 
