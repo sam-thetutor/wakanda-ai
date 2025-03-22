@@ -1,41 +1,11 @@
 # Wakanda AI - Aptos Mobile Agent
-
-A USSD and SMS-based blockchain interface that enables anyone with a basic mobile phone to interact with the Aptos blockchain in their preferred language (English, French, or Kiswahili). Built for Africa, it provides PIN-protected wallet management through USSD menus and natural language blockchain interactions via SMS.
-
-## Key Features
-
-- USSD menu for wallet management (create, view, secure, delete)
-- Natural language SMS interactions with blockchain
-- Multi-language support (English, French, Kiswahili)
-- PIN-protected operations
-- AI-powered response summarization
-- Secure private key handling
-
-## Tech Stack
-
-- Express.js + TypeScript
-- MongoDB Atlas
-- Aptos Blockchain
-- Africa's Talking (SMS/USSD)
-- Claude 3.5 + GPT-3.5 (AI/ML)
-
-Built with ❤️ for Africa 🌍
-
-## Features
-
-### USSD Interface (Account Management)
-
-Short code-based menu system for account operations:
-
-# WAKANDA AI
-
 <p align="center">
   <img src="./src//assets/logo.jpg" alt="Wakanda AI Logo" width="200"/>
 </p>
 
-## Background Story
+A USSD and SMS-based blockchain interface that enables anyone with a basic mobile phone to interact with the Aptos blockchain in their preferred language (English, French, or Kiswahili). Built for Africa, it provides PIN-protected wallet management through USSD menus and natural language blockchain interactions via SMS.
 
-Wakanda AI was born from the vision of bridging the technological divide in Africa by making blockchain technology accessible to everyone, regardless of their technical expertise. Named after the fictional technologically advanced African nation, Wakanda AI embodies the spirit of African innovation and progress.
+## Background Story
 
 The idea emerged when we realized that while blockchain technology holds immense potential for financial inclusion and economic growth in Africa, many Africans face barriers to entry due to technical complexity and language limitations. SMS, being widely used across the continent, presented itself as the perfect platform to democratize access to blockchain technology.
 
@@ -47,21 +17,39 @@ To empower Africans by providing simple, accessible, and culturally relevant blo
 
 To become Africa's leading AI-powered blockchain interface, creating a future where every African can easily participate in the digital economy using their preferred local language.
 
-## Overview
-
-Wakanda AI is an innovative AI agent that enables users to interact with the MOVE protocol through SMS and USSD in their native languages.
-
-- English
-- Kiswahili
-- Igbo
-- Hausa
-
+<p>
     <p align="center" style="display: flex; justify-content: center; align-items: center;">
     <img src="./src//assets/wak1.png" alt="Wakanda AI Logo" width="200"/>
     <img src="./src//assets/wak2.png" alt="Wakanda AI Logo" width="200"/>
     <img src="./src//assets/wak3.png" alt="Wakanda AI Logo" width="200"/>
 
 </p>
+
+## Key Features
+
+- USSD menu for wallet management (create, view, secure, delete)
+- Natural language SMS interactions with blockchain
+- Multi-language support (English, French, Kiswahili)
+- PIN-protected operations
+- AI-powered response summarization
+- Secure private key handling
+
+
+
+ <p align="center" style="display: flex; justify-content: center; align-items: center;">
+    <img src="./src//assets/wak4.png" alt="Wakanda AI Logo" width="200"/>
+    <img src="./src//assets/wak5.png" alt="Wakanda AI Logo" width="200"/>
+</p>
+
+## Tech Stack
+
+- Move-AI-Agent kit
+- Aptos Blockchain
+- Claude 3.5 + GPT-3.5 (AI/ML)
+- Express.js + TypeScript
+- MongoDB Atlas
+- Africa's Talking (SMS/USSD)
+
 
 ## Features
 
@@ -72,16 +60,13 @@ Wakanda AI is an innovative AI agent that enables users to interact with the MOV
 - 🔒 Secure transactions
 - 💬 Natural language processing
 
- <p align="center" style="display: flex; justify-content: center; align-items: center;">
-    <img src="./src//assets/wak4.png" alt="Wakanda AI Logo" width="200"/>
-    <img src="./src//assets/wak5.png" alt="Wakanda AI Logo" width="200"/>
-</p>
 
 ## Getting Started
 
 ### Prerequisites
 
 - SMS and USSD enabled mobile phone
+
 
 ### Installation
 
